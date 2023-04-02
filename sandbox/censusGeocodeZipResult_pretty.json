@@ -1,0 +1,93 @@
+{
+  "result": {
+    "input": {
+      "address": {
+        "zip": "11735",
+        "street": "2350 Broadhollow Rd"
+      },
+      "benchmark": {
+        "isDefault": true,
+        "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+        "id": "4",
+        "benchmarkName": "Public_AR_Current"
+      }
+    },
+    "addressMatches": [
+      {
+        "tigerLine": {
+          "side": "L",
+          "tigerLineId": "653450425"
+        },
+        "coordinates": {
+          "x": -73.42226014776634,
+          "y": 40.75227187293891
+        },
+        "addressComponents": {
+          "zip": "11735",
+          "streetName": "BROAD HOLLOW",
+          "preType": "",
+          "city": "FARMINGDALE",
+          "preDirection": "",
+          "suffixDirection": "",
+          "fromAddress": "2300",
+          "state": "NY",
+          "suffixType": "RD",
+          "toAddress": "2398",
+          "suffixQualifier": "",
+          "preQualifier": ""
+        },
+        "matchedAddress": "2350 BROAD HOLLOW RD, FARMINGDALE, NY, 11735"
+      },
+      {
+        "tigerLine": {
+          "side": "L",
+          "tigerLineId": "653450425"
+        },
+        "coordinates": {
+          "x": -73.42226014776634,
+          "y": 40.75227187293891
+        },
+        "addressComponents": {
+          "zip": "11735",
+          "streetName": "BROAD HOLLOW",
+          "preType": "",
+          "city": "S FARMINGDALE",
+          "preDirection": "",
+          "suffixDirection": "",
+          "fromAddress": "2300",
+          "state": "NY",
+          "suffixType": "RD",
+          "toAddress": "2398",
+          "suffixQualifier": "",
+          "preQualifier": ""
+        },
+        "matchedAddress": "2350 BROAD HOLLOW RD, S FARMINGDALE, NY, 11735"
+      },
+      {
+        "tigerLine": {
+          "side": "L",
+          "tigerLineId": "653450425"
+        },
+        "coordinates": {
+          "x": -73.42226014776634,
+          "y": 40.75227187293891
+        },
+        "addressComponents": {
+          "zip": "11735",
+          "streetName": "BROAD HOLLOW",
+          "preType": "",
+          "city": "SOUTH FARMINGDALE",
+          "preDirection": "",
+          "suffixDirection": "",
+          "fromAddress": "2300",
+          "state": "NY",
+          "suffixType": "RD",
+          "toAddress": "2398",
+          "suffixQualifier": "",
+          "preQualifier": ""
+        },
+        "matchedAddress": "2350 BROAD HOLLOW RD, SOUTH FARMINGDALE, NY, 11735"
+      }
+    ]
+  }
+}
