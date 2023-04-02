@@ -53,6 +53,10 @@ public class SandboxLocation {
         //createForecasts(); //fetches forecasts and maps JSON to objects
     }
     
+    /**
+     * Queries the US Census Bureau Geocoding API using the street and ZIP code.
+     * Result is saved to a file in the root directory.
+     */
     public void censusGeocodeZipToFile(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";
@@ -65,6 +69,11 @@ public class SandboxLocation {
                               .asFile("./censusGeocodeZipResult.json")
                               .getBody();
     }
+    
+    /**
+     * Queries the US Census Bureau Geocoding API using the street and ZIP code.
+     * Result is mapped to an object (not currently working).
+     */
     public void censusGeocodeZipToObject(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";
@@ -78,6 +87,10 @@ public class SandboxLocation {
                               .getBody();
     }
     
+    /**
+     * Queries the US Census Bureau Geocoding API using the street, city, and state (but no ZIP).
+     * Result is saved to a file in the root directory..
+     */
     public void censusGeocodeCityStateToFile(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";
@@ -92,6 +105,10 @@ public class SandboxLocation {
                               .getBody();
     }
     
+    /**
+     * Queries the US Census Bureau Geocoding API using the street, city, and state (but no ZIP).
+     * Result is mapped to an object (not currently working).
+     */
     public void censusGeocodeCityStateToObject(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";
@@ -106,6 +123,10 @@ public class SandboxLocation {
                               .getBody();
     }
     
+    /**
+     * Queries the US Census Bureau Geocoding API using the full address.
+     * Result is saved to a file..
+     */
     public void censusGeocodeFullAddressToFile(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";
@@ -121,6 +142,10 @@ public class SandboxLocation {
                               .getBody();
     }
 
+    /**
+     * Queries the US Census Bureau Geocoding API using the full address.
+     * Result is mapped to an object (not currently working).
+     */
     public void censusGeocodeFullAddressToObject(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";

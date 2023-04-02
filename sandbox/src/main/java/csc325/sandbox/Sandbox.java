@@ -18,10 +18,14 @@ public class Sandbox {
         SandboxLocation farmingdale = new SandboxLocation(name, street, city, state, zip);
         
         //Test the methods.
+        //All methods except the one currently being tested are commented out.
+        
+        //The ToFile() methods seem to work. Example results are in the root folder of the project.
         //farmingdale.censusGeocodeZipToFile();
         //farmingdale.censusGeocodeCityStateToFile();
         //farmingdale.censusGeocodeFullAddressToFile();
         
+        //The ToObject() methods are not working. An object is generated (we pass the != null condition), but we crash because the AddressMatches list is null.
         /*
         farmingdale.censusGeocodeZipToObject();
         if (farmingdale.getGeoResult() != null){
