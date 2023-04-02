@@ -16,8 +16,9 @@ public class Sandbox {
         SandboxLocation farmingdale = new SandboxLocation(name, street, city, state, zip);
         
         //Test the methods.
-        farmingdale.censusGeocodeZipToFile();
-        farmingdale.censusGeocodeCityStateToFile();
-        farmingdale.censusGeocodeFullAddressToFile();
+        //farmingdale.censusGeocodeZipToFile();
+        //farmingdale.censusGeocodeCityStateToFile();
+        //farmingdale.censusGeocodeFullAddressToFile();
+        farmingdale.censusGeocodeZipToObject();
     }
 }

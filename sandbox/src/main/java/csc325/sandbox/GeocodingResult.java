@@ -1,6 +1,7 @@
 
 package csc325.sandbox;
 
+import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -8,16 +9,27 @@ import com.google.gson.annotations.SerializedName;
 @Generated("jsonschema2pojo")
 public class GeocodingResult {
 
-    @SerializedName("result")
+    @SerializedName("input")
     @Expose
-    private Result result;
+    private Input input;
+    @SerializedName("addressMatches")
+    @Expose
+    private List<AddressMatch> addressMatches;
 
-    public Result getResult() {
-        return result;
+    public Input getInput() {
+        return input;
     }
 
-    public void setResult(Result result) {
-        this.result = result;
+    public void setInput(Input input) {
+        this.input = input;
+    }
+
+    public List<AddressMatch> getAddressMatches() {
+        return addressMatches;
+    }
+
+    public void setAddressMatches(List<AddressMatch> addressMatches) {
+        this.addressMatches = addressMatches;
     }
 
 }

@@ -20,6 +20,19 @@ public class SandboxLocation {
     //NWS grid points
     double gridX;
     double gridY;
+    GeocodingResult geoResult;
+
+    public double getGridX() {
+        return gridX;
+    }
+
+    public double getGridY() {
+        return gridY;
+    }
+
+    public GeocodingResult getGeoResult() {
+        return geoResult;
+    }
 
     /**
      * Default (no arg) constructor.
@@ -50,6 +63,18 @@ public class SandboxLocation {
                               .queryString("benchmark", benchmark)
                               .queryString("format", format)
                               .asFile("./censusGeocodeZipResult.json")
+                              .getBody();
+    }
+    public void censusGeocodeZipToObject(){
+        String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
+        String benchmark = "Public_AR_Current";
+        String format = "json";
+        geoResult = Unirest.get(baseURL)
+                              .queryString("street", street)
+                              .queryString("zip", zip)
+                              .queryString("benchmark", benchmark)
+                              .queryString("format", format)
+                              .asObject(GeocodingResult.class)
                               .getBody();
     }
     
