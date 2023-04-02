@@ -92,6 +92,20 @@ public class SandboxLocation {
                               .getBody();
     }
     
+    public void censusGeocodeCityStateToObject(){
+        String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
+        String benchmark = "Public_AR_Current";
+        String format = "json";
+        geoResult = Unirest.get(baseURL)
+                              .queryString("street", street)
+                              .queryString("city", city)
+                              .queryString("state", state)
+                              .queryString("benchmark", benchmark)
+                              .queryString("format", format)
+                              .asObject(GeocodingResult.class)
+                              .getBody();
+    }
+    
     public void censusGeocodeFullAddressToFile(){
         String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
         String benchmark = "Public_AR_Current";
@@ -107,6 +121,21 @@ public class SandboxLocation {
                               .getBody();
     }
 
+    public void censusGeocodeFullAddressToObject(){
+        String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
+        String benchmark = "Public_AR_Current";
+        String format = "json";
+        geoResult = Unirest.get(baseURL)
+                              .queryString("street", street)
+                              .queryString("city", city)
+                              .queryString("state", state)
+                              .queryString("zip", zip)
+                              .queryString("benchmark", benchmark)
+                              .queryString("format", format)
+                              .asObject(GeocodingResult.class)
+                              .getBody();
+    }
+        
     public String getName() {
         return name;
     }
