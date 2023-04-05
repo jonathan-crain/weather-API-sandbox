@@ -54,6 +54,7 @@ public class Sandbox {
         }
         */ 
         
+        /*
         farmingdale.censusGeocodeFullAddressToObject();
         if (farmingdale.getGeoResult() != null){
             int numAddressMatches = farmingdale.getGeoResult().getAddressMatches().size();
@@ -65,6 +66,18 @@ public class Sandbox {
             }
             
         }
+        */
         
+        farmingdale.censusGeocodeZipToObject_v2();
+        if (farmingdale.getGeoResult() != null){
+            int numAddressMatches = farmingdale.getGeoResult().getAddressMatches().size();
+            System.out.printf("%d addresses matched\n", numAddressMatches);
+
+            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getAddressMatches();
+            for (AddressMatch m : addressMatches){
+                System.out.printf("city: %s x-coord: %f y-coord: %f\n", m.getAddressComponents().getCity(), m.getCoordinates().getX(), m.getCoordinates().getY());
+            }
+            
+        }
     }
 }

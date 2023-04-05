@@ -1,5 +1,7 @@
 package csc325.sandbox;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.File;
 import kong.unirest.Unirest;
 
@@ -85,6 +87,21 @@ public class SandboxLocation {
                               .queryString("format", format)
                               .asObject(GeocodingResult.class)
                               .getBody();
+    }
+    
+    public void censusGeocodeZipToObject_v2(){
+        String baseURL = "https://geocoding.geo.census.gov/geocoder/locations/address";
+        String benchmark = "Public_AR_Current";
+        String format = "json";
+        String response = Unirest.get(baseURL)
+                              .queryString("street", street)
+                              .queryString("zip", zip)
+                              .queryString("benchmark", benchmark)
+                              .queryString("format", format)
+                              .asString()
+                              .getBody();
+        Gson gson = new GsonBuilder().create();
+        geoResult = gson.fromJson(response, GeocodingResult.class);
     }
     
     /**
