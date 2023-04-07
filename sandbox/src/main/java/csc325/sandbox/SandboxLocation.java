@@ -22,7 +22,11 @@ public class SandboxLocation {
     //NWS grid points
     double gridX;
     double gridY;
+    //Object which holds Census Bureau Geocoding API responses
     GeocodingResult geoResult;
+    //Object which holds National Weather Service (Grid) Points responses.
+    Points points;
+    String userAgentNWS = "CSC 325 Capstone Project, craij3@farmingdale.edu";
 
     public double getGridX() {
         return gridX;
@@ -50,7 +54,6 @@ public class SandboxLocation {
         this.city = city;
         this.state = state;
         this.zip = zip;
-        //TODO - complete this constructor
         censusGeocodeFullAddressToObject();
         if (geoResult.getResult() == null || geoResult.getResult().getAddressMatches().isEmpty()){
             System.out.println("Could not geocode this location. Should replace this with proper error handling.");
@@ -59,7 +62,20 @@ public class SandboxLocation {
             lat = geoResult.getResult().getAddressMatches().get(0).getCoordinates().getY();
             lon = geoResult.getResult().getAddressMatches().get(0).getCoordinates().getX();
         }
+        //getGridPoints();
+        //System.out.println("GridX: " + points.getProperties().getGridX());
         //createForecasts(); //fetches forecasts and maps JSON to objects
+    }
+    
+    //Should try to figure out how to add a user agent.
+    private void getGridPoints(){
+        String baseURL = "https://api.weather.gov/points/{latitude},{longitude}";
+        points = Unirest.get(baseURL)
+                .routeParam("latitude", String.valueOf(lat))
+                .routeParam("longitude", String.valueOf(lon))
+                .asObject(Points.class)
+                .getBody()
+                ;
     }
     
     
