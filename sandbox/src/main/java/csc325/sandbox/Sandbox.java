@@ -17,6 +17,8 @@ public class Sandbox {
         String zip = "11735";      
         SandboxLocation farmingdale = new SandboxLocation(name, street, city, state, zip);
         
+        System.out.println("Latiude: " + farmingdale.getLat() + " Longitude: " + farmingdale.getLon());
+        
         //The ToFile() methods seem to work. Example results are in the root folder of the project.
         //farmingdale.censusGeocodeZipToFile();
         //farmingdale.censusGeocodeCityStateToFile();
@@ -63,7 +65,7 @@ public class Sandbox {
             
         }
         
-        */
+        
         farmingdale.censusGeocodeFullAddressToObject();
         if (farmingdale.getGeoResult() != null){
             int numAddressMatches = farmingdale.getGeoResult().getResult().getAddressMatches().size();
@@ -76,6 +78,6 @@ public class Sandbox {
             
         }
         System.out.println("");
-        
+        */
     }
 }

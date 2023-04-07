@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
 
 @Generated("jsonschema2pojo")
 public class Result {
@@ -16,7 +17,7 @@ public class Result {
     @SerializedName("addressMatches")
     @Expose
    
-    private List<AddressMatch> addressMatches;
+    private ArrayList<AddressMatch> addressMatches;
 
     public Input getInput() {
         return input;
@@ -26,11 +27,11 @@ public class Result {
         this.input = input;
     }
 
-    public List<AddressMatch> getAddressMatches() {
+    public ArrayList<AddressMatch> getAddressMatches() {
         return addressMatches;
     }
 
-    public void setAddressMatches(List<AddressMatch> addressMatches) {
+    public void setAddressMatches(ArrayList<AddressMatch> addressMatches) {
         this.addressMatches = addressMatches;
     }
 

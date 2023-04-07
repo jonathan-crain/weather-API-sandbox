@@ -17,8 +17,8 @@ public class SandboxLocation {
     String state;
     String zip;
     //Latitude and longitude (decimal degrees)
-    double lat;
-    double lon;
+    double lat; //y-value returned by Census Geocoding
+    double lon; //x-value returned by Census Geocoding
     //NWS grid points
     double gridX;
     double gridY;
@@ -51,9 +51,17 @@ public class SandboxLocation {
         this.state = state;
         this.zip = zip;
         //TODO - complete this constructor
-        //fetchCoordinates();
+        censusGeocodeFullAddressToObject();
+        if (geoResult.getResult() == null || geoResult.getResult().getAddressMatches().isEmpty()){
+            System.out.println("Could not geocode this location. Should replace this with proper error handling.");
+        } else {
+            //I'm not sure how to handle the fact that geocoding can return multiple results. I'm just taking the first result for the time being.
+            lat = geoResult.getResult().getAddressMatches().get(0).getCoordinates().getY();
+            lon = geoResult.getResult().getAddressMatches().get(0).getCoordinates().getX();
+        }
         //createForecasts(); //fetches forecasts and maps JSON to objects
     }
+    
     
     /**
      * Queries the US Census Bureau Geocoding API using the street and ZIP code.
