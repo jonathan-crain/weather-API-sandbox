@@ -5,18 +5,20 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
 @Generated("jsonschema2pojo")
 public class AddressMatch {
 
     @SerializedName("tigerLine")
     @Expose
+    
     private TigerLine tigerLine;
     @SerializedName("coordinates")
     @Expose
+    
     private Coordinates coordinates;
     @SerializedName("addressComponents")
     @Expose
+    
     private AddressComponents addressComponents;
     @SerializedName("matchedAddress")
     @Expose

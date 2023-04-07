@@ -10,9 +10,11 @@ public class Input {
 
     @SerializedName("address")
     @Expose
+   
     private Address address;
     @SerializedName("benchmark")
     @Expose
+    
     private Benchmark benchmark;
 
     public Address getAddress() {

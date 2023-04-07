@@ -17,67 +17,65 @@ public class Sandbox {
         String zip = "11735";      
         SandboxLocation farmingdale = new SandboxLocation(name, street, city, state, zip);
         
-        //Test the methods.
-        //All methods except the one currently being tested are commented out.
-        
         //The ToFile() methods seem to work. Example results are in the root folder of the project.
         //farmingdale.censusGeocodeZipToFile();
         //farmingdale.censusGeocodeCityStateToFile();
         //farmingdale.censusGeocodeFullAddressToFile();
         
-        //The ToObject() methods are not working. An object is generated (we pass the != null condition), but we crash because the AddressMatches list is null.
+        //The ToObject() methods are now working. Hooray! Commenting out all but one, so that further testing can be done with the next stages (getting gridpoints and a forecast).
         /*
         farmingdale.censusGeocodeZipToObject();
         if (farmingdale.getGeoResult() != null){
-            int numAddressMatches = farmingdale.getGeoResult().getAddressMatches().size();
+            int numAddressMatches = farmingdale.getGeoResult().getResult().getAddressMatches().size();
             System.out.printf("%d addresses matched\n", numAddressMatches);
 
-            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getAddressMatches();
+            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getResult().getAddressMatches();
             for (AddressMatch m : addressMatches){
                 System.out.printf("city: %s x-coord: %f y-coord: %f\n", m.getAddressComponents().getCity(), m.getCoordinates().getX(), m.getCoordinates().getY());
             }
-            
         }
-        */
         
-        /*
+        System.out.println("");
+        
         farmingdale.censusGeocodeCityStateToObject();
         if (farmingdale.getGeoResult() != null){
-            int numAddressMatches = farmingdale.getGeoResult().getAddressMatches().size();
+            int numAddressMatches = farmingdale.getGeoResult().getResult().getAddressMatches().size();
             System.out.printf("%d addresses matched\n", numAddressMatches);
 
-            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getAddressMatches();
+            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getResult().getAddressMatches();
             for (AddressMatch m : addressMatches){
                 System.out.printf("city: %s x-coord: %f y-coord: %f\n", m.getAddressComponents().getCity(), m.getCoordinates().getX(), m.getCoordinates().getY());
             }
             
         }
-        */ 
         
-        /*
-        farmingdale.censusGeocodeFullAddressToObject();
-        if (farmingdale.getGeoResult() != null){
-            int numAddressMatches = farmingdale.getGeoResult().getAddressMatches().size();
-            System.out.printf("%d addresses matched\n", numAddressMatches);
-
-            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getAddressMatches();
-            for (AddressMatch m : addressMatches){
-                System.out.printf("city: %s x-coord: %f y-coord: %f\n", m.getAddressComponents().getCity(), m.getCoordinates().getX(), m.getCoordinates().getY());
-            }
-            
-        }
-        */
+        System.out.println("");
         
         farmingdale.censusGeocodeZipToObject_v2();
         if (farmingdale.getGeoResult() != null){
-            int numAddressMatches = farmingdale.getGeoResult().getAddressMatches().size();
+            int numAddressMatches = farmingdale.getGeoResult().getResult().getAddressMatches().size();
             System.out.printf("%d addresses matched\n", numAddressMatches);
 
-            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getAddressMatches();
+            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getResult().getAddressMatches();
             for (AddressMatch m : addressMatches){
                 System.out.printf("city: %s x-coord: %f y-coord: %f\n", m.getAddressComponents().getCity(), m.getCoordinates().getX(), m.getCoordinates().getY());
             }
             
         }
+        
+        */
+        farmingdale.censusGeocodeFullAddressToObject();
+        if (farmingdale.getGeoResult() != null){
+            int numAddressMatches = farmingdale.getGeoResult().getResult().getAddressMatches().size();
+            System.out.printf("%d addresses matched\n", numAddressMatches);
+
+            List<AddressMatch> addressMatches = farmingdale.getGeoResult().getResult().getAddressMatches();
+            for (AddressMatch m : addressMatches){
+                System.out.printf("city: %s x-coord: %f y-coord: %f\n", m.getAddressComponents().getCity(), m.getCoordinates().getX(), m.getCoordinates().getY());
+            }
+            
+        }
+        System.out.println("");
+        
     }
 }
