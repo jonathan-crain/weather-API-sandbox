@@ -79,5 +79,7 @@ public class Sandbox {
         }
         System.out.println("");
         */
+        
+        System.out.printf("Farmingdale lat: %f Farmingdale long: %f", farmingdale.getLat(), farmingdale.getLon());
     }
 }
